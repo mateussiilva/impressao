@@ -29,6 +29,7 @@ function TempoDeImpressão() {
     let resultImpressao = document.querySelector("#resImpressao")
     let resultCalandra = document.querySelector("#resCalandra")
     let resultProducao = document.querySelector("#resProducao")
+    let areaLgo = document.querySelector("#subAreaLog")
 
     for (impresora in configuracoesImpressoras) {
         if (impresora === impressoraSelecionada) {
@@ -41,7 +42,17 @@ function TempoDeImpressão() {
             resultImpressao.innerText = msg
             resultCalandra.innerText = msg1
             resultProducao.innerText = msg2
+            let d = document.createElement("div")
+            d.innerText = `${msg},${msg1},${msg2}`
+            areaLgo.appendChild(d)
         }
     }
+
+}
+
+function clearAreaLog(){
+    let areaLgo = document.querySelector("#subAreaLog")
+    areaLgo.innerHTML = ""
+
 
 }

@@ -25,7 +25,7 @@ main {
     width: 75%;
     margin: 0 auto;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: nowrap;
     gap: 16px;
 }
@@ -40,17 +40,40 @@ section {
 
 }
 
-div{
+div {
     padding: 16px;
 }
 
 /* Area de resultado */
-#resImpressao,#resProducao,#resCalandra{
+#resImpressao,
+#resProducao,
+#resCalandra {
     color: green;
 
 }
-footer{
-    margin:auto;
+
+#areLog {
+    text-align: center;
+    width: 75vw;
+    overflow: hidden;
+}
+
+h5,
+#clearButton {
+    margin-bottom: 16px;
+}
+
+#subAreaLog{
+    overflow: ;
+}
+
+
+
+
+
+/* RODAPÉ */
+footer {
+    margin: auto;
     width: 100vw;
     height: 75px;
     bottom: 0;
@@ -58,16 +81,21 @@ footer{
     text-align: center;
     background-color: white;
 }
-/* RODAPÉ */
-footer > p {
+
+
+
+
+
+
+footer>p {
     margin-top: 16px;
 }
 
-p > a {
+p>a {
     color: var(--dark_color);
     text-decoration: none;
 }
 
-p > a:hover{
+p>a:hover {
     cursor: pointer;
 }
