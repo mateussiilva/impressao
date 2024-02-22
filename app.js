@@ -1,18 +1,18 @@
 #!/usr/bin/env nodejs
 
-import  {calcularMetrosPorMinuto,calcularTempoDeCalandra}  from "./main.js"
+import { calcularMetrosPorMinuto, calcularTempoDeCalandra } from "./main.js"
+
+
+export function TempoDeImpressão() {
+    let metrosImpressao = parseFloat(document.querySelector("#imetros").value);
+    const metrosPorMinuto = calcularMetrosPorMinuto(metrosImpressao)
+    let impressoraSelecionada = document.querySelector("#iimpressoras").value;
+    let materialSelecionado = document.querySelector("#itiposMaterias").value;
+    console.log(metrosPorMinuto.impressoraSelecionada(), " minutos")
+}
 
 
 
-const metrosImpressao = 20
-const metrosPorMinuto = calcularMetrosPorMinuto(metrosImpressao)
-console.log(metrosPorMinuto.tex()," minutos")
-console.log(calcularTempoDeCalandra(metrosImpressao).tactel()," minutos")
-
-
-
-
-// function TempoDeImpressão() {
 //     let metrosImpressao = parseFloat(document.querySelector("#imetros").value);
 //     let impressoraSelecionada = document.querySelector("#iimpressoras").value;
 //     let materialSelecionado = document.querySelector("#itiposMaterias").value;

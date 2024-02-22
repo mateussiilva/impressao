@@ -15,4 +15,3 @@ export  function calcularTempoDeCalandra(metros) {
     }
 }
 
-// export default calcularTempoDeCalandra };
