@@ -1,15 +1,18 @@
 
-
-function fabrica1(nome, sobrenome){
-    function nomecompleto() {
-        return `${nome} ${sobrenome}`
-    }
+export function calcularMetrosPorMinuto(metros) {
     return {
-        nome,
-        sobrenome,
-        nomecompleto   
+        "mutoh": () => { return Math.ceil(metros / 9 * 60) },
+        "jet": () => { return Math.ceil(metros / 17 * 60) },
+        "tex": () => { return Math.ceil(metros / 58 * 60) },
     }
 }
 
-let pessoa1 = fabrica1("mateus","jose")
-console.log(pessoa1.nomecompleto())
+export  function calcularTempoDeCalandra(metros) {
+    return {
+        "tactel": () => { return metros / 2 },
+        "malha": () => { return metros / 1.5 },
+        "dasminys": () => { return metros / 2 },
+    }
+}
+
+// export default calcularTempoDeCalandra };

@@ -1,8 +1,9 @@
 {
   "name": "impressao",
   "version": "1.0.0",
+  "type": "module",
   "description": "",
-  "main": "main.js",
+  "main": "app.js",
   "scripts": {
     "start": "node run",
     "test": "echo \"Error: no test specified\" && exit 1"

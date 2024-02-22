@@ -1,41 +1,13 @@
 #!/usr/bin/env nodejs
 
-const configuracoesImpressoras = {
-    
-};
+import  {calcularMetrosPorMinuto,calcularTempoDeCalandra}  from "./main.js"
 
 
-function calcularMetrosPorMinuto(metros){
-    return {
-        "1604": ()=> {return metros / 9 * 60 },
-        "1602": ()=> {return metros / 17 * 60 },
-        "1904": ()=> {return metros / 58 * 60 },
-    }
-}
 
-
-const configuracoesMaterias = {
-    "tactel": 2.0,
-    "malha": 1.5,
-}
-
-const metrosPorMinuto = calcularMetrosPorMinuto(12)
-console.log(metrosPorMinuto[1602]())
-
-
-// const MINUTOS = 60;
-
-// function calcularTempoImpressao(metros_por_minuto, metros) {
-//     return Math.ceil(metros / metros_por_minuto * MINUTOS)
-// }
-
-// function calcularTempoDeCalandra(metros,tempoMaterial){
-//     return Math.ceil(metros / tempoMaterial )
-// }
-
-// function displayResult(msg, content){
-    
-// }
+const metrosImpressao = 20
+const metrosPorMinuto = calcularMetrosPorMinuto(metrosImpressao)
+console.log(metrosPorMinuto.tex()," minutos")
+console.log(calcularTempoDeCalandra(metrosImpressao).tactel()," minutos")
 
 
 
