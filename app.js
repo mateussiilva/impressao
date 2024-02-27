@@ -1,6 +1,5 @@
 #!/usr/bin/env nodejs
 
-
 const configuracoesImpressoras = {
     "1604": 9,
     "1602": 17,
@@ -15,12 +14,14 @@ const configuracoesMaterias = {
 const MINUTOS = 60;
 
 function calcularTempoImpressao(metros_por_minuto, metros) {
-    return Math.ceil(metros / metros_por_minuto * 60)
+    return Math.ceil(metros / metros_por_minuto * MINUTOS)
 }
 
-function calcularTempoDeCalandra(metros,tempoMaterial){
-    return Math.ceil(metros / tempoMaterial )
+function calcularTempoDeCalandra(metros, tempoMaterial) {
+    return Math.ceil(metros / tempoMaterial)
 }
+
+
 
 function TempoDeImpressão() {
     let metrosImpressao = parseFloat(document.querySelector("#imetros").value);
@@ -34,10 +35,10 @@ function TempoDeImpressão() {
         if (impresora === impressoraSelecionada) {
             let metrosPorMinuto = configuracoesImpressoras[impresora]
             let tempoDeImpressão = calcularTempoImpressao(metrosPorMinuto, metrosImpressao)
-            let tempoDeCalandra = calcularTempoDeCalandra(metrosImpressao,configuracoesMaterias[materialSelecionado])
-            let msg =`${tempoDeImpressão} minutos`
-            let msg1 =`${tempoDeCalandra} minutos`
-            let msg2 =`${(tempoDeCalandra + tempoDeImpressão * 0.5) +tempoDeCalandra + tempoDeImpressão} minutos`
+            let tempoDeCalandra = calcularTempoDeCalandra(metrosImpressao, configuracoesMaterias[materialSelecionado])
+            let msg = `${tempoDeImpressão} minutos`
+            let msg1 = `${tempoDeCalandra} minutos`
+            let msg2 = `${(tempoDeCalandra + tempoDeImpressão * 0.5) + tempoDeCalandra + tempoDeImpressão} minutos`
             resultImpressao.innerText = msg
             resultCalandra.innerText = msg1
             resultProducao.innerText = msg2
