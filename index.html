@@ -6,13 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ajudante de Impressão</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .estoque-tecido {
+            width: 98%;
+            padding: 12px;
+        }
+
+        table {
+            width: 100%;
+            text-align: center;
+
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
 </head>
 
 <body>
-    <header>
-
-    </header>
-
     <main>
         <section class="form">
             <form id="form_tempo_de_impressao">
@@ -23,9 +37,9 @@
                 <div>
                     <label for="iimpressoras">Impressora:</label>
                     <select name="impressoras" id="iimpressoras">
-                        <option value="1604">Mutoh</option>
-                        <option value="1602">PrismaJet</option>
-                        <option value="1904">PrismaTex</option>
+                        <option value="mutoh">Mutoh</option>
+                        <option value="jet">PrismaJet</option>
+                        <option value="tex">PrismaTex</option>
                     </select>
                 </div>
                 <div>
@@ -45,15 +59,44 @@
                 </div>
             </form>
         </section>
-        <section id="areLog">
-            <h5>Log</h5><button onclick="clearAreaLog()" id="clearButton">Clear</button>
-            <div id="subAreaLog"></div>
+
+        <section>
+            <form id="controle-esoque">
+                <div>
+                    <select name="tiposTecidos" id="itipostecidos">
+                        <option value="Tactel Alexandre">Tactel Alexandre</option>
+                        <option value="Malha Alexandre">Malha Alexandre</option>
+                        <option value="Malha TEXTIL">Malha TEXTIL</option>
+                        <option value="Tactel Vipal">Tactel Vipal</option>
+                    </select>
+                    <label for="imetros">Metro</label>
+                    <input type="number" name="metrosTecido" id="imetrosTecido">
+                    <select name="observaçõesTecidos" id="obsTecidos">
+                        <option value="tecidoLimpo">Normal</option>
+                        <option value="tecidoPequeno">Ponta</option>
+                        <option value="tecidoSujo">Sujo</option>
+
+                    </select>
+                    <input type="button" value="+" onclick="AdicionarLinhaTabela()">
+                </div>
+
+            </form>
         </section>
+        <section class="estoque-tecido">
+            <table>
+                <thead>
+                    <th>Tipo</th>
+                    <th>Quantidade</th>
+                    <th>Obs</th>
+                </thead>
+                <tbody id="bodytable">
+                </tbody>
+            </table>
+        </section>
+        <section>
+
     </main>
-    <footer>
-        <p>Ferramenta desenvolvida por <a href="https://github.com./mateussiilva" target="_blank" >@mateussiilvaa</p>
-    </footer>
+
 </body>
 <script src="app.js"></script>
-
 </html>
