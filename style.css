@@ -10,6 +10,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-size: 1.2rem;
     font-family: "Roboto", sans-serif;
     font-weight: 400;
@@ -22,52 +23,63 @@ body {
 
 main {
     padding-top: 10%;
-    width: 75%;
+    width: 100%;
     margin: 0 auto;
+    height: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: nowrap;
     gap: 16px;
 }
 
 
 section {
-    width: 100%;
-    height: 75%;
+    margin: 0 auto;
     border-radius: 8px;
     background-color: whitesmoke;
     flex-shrink: 10;
 
 }
 
-div{
+section.form {
+    width:75%;
+    height: 75%;
+}
+
+div {
     padding: 16px;
 }
 
 /* Area de resultado */
-#resImpressao,#resProducao,#resCalandra{
+#resImpressao,
+#resProducao,
+#resCalandra {
     color: green;
 
 }
-footer{
-    margin:auto;
+
+footer {
+    margin: auto;
     width: 100vw;
     height: 75px;
     bottom: 0;
-    position: fixed;
+    /* position: fixed; */
     text-align: center;
     background-color: white;
 }
+
 /* RODAPÉ */
-footer > p {
+footer>p {
     margin-top: 16px;
 }
 
-p > a {
+p>a {
     color: var(--dark_color);
     text-decoration: none;
 }
 
-p > a:hover{
+p>a:hover {
     cursor: pointer;
 }
+
+

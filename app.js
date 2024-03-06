@@ -18,8 +18,8 @@ function calcularTempoImpressao(metros_por_minuto, metros) {
     return Math.ceil(metros / metros_por_minuto * 60)
 }
 
-function calcularTempoDeCalandra(metros,tempoMaterial){
-    return Math.ceil(metros / tempoMaterial )
+function calcularTempoDeCalandra(metros, tempoMaterial) {
+    return Math.ceil(metros / tempoMaterial)
 }
 
 function TempoDeImpressão() {
@@ -34,14 +34,34 @@ function TempoDeImpressão() {
         if (impresora === impressoraSelecionada) {
             let metrosPorMinuto = configuracoesImpressoras[impresora]
             let tempoDeImpressão = calcularTempoImpressao(metrosPorMinuto, metrosImpressao)
-            let tempoDeCalandra = calcularTempoDeCalandra(metrosImpressao,configuracoesMaterias[materialSelecionado])
-            let msg =`${tempoDeImpressão} minutos`
-            let msg1 =`${tempoDeCalandra} minutos`
-            let msg2 =`${(tempoDeCalandra + tempoDeImpressão * 0.5) +tempoDeCalandra + tempoDeImpressão} minutos`
+            let tempoDeCalandra = calcularTempoDeCalandra(metrosImpressao, configuracoesMaterias[materialSelecionado])
+            let msg = `${tempoDeImpressão} minutos`
+            let msg1 = `${tempoDeCalandra} minutos`
+            let msg2 = `${(tempoDeCalandra + tempoDeImpressão * 0.5) + tempoDeCalandra + tempoDeImpressão} minutos`
             resultImpressao.innerText = msg
             resultCalandra.innerText = msg1
             resultProducao.innerText = msg2
         }
     }
 
+}
+
+function AdicionarLinhaTabela() {
+    const metrosTecido = Number(document.querySelector("#imetrosTecido").value);
+    if (Number(metrosTecido) > 0) {
+        const tecidoSelecionado = document.querySelector("#itipostecidos").value;
+        const obsTecido = document.getElementById("obsTecidos").value;
+        const arrayDados = [tecidoSelecionado,metrosTecido,obsTecido]
+        const bodyTable = document.querySelector("#bodytable");
+        const line = document.createElement("tr");
+        for (const value of arrayDados) {
+            let td = document.createElement("td")
+            td.innerText = value
+            line.appendChild(td)
+        }
+        bodyTable.appendChild(line)
+    }
+    else{
+        alert("Insira a metragem")
+    }
 }
