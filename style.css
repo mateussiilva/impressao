@@ -41,6 +41,7 @@ section {
 
 }
 
+
 section.form {
     width:75%;
     height: 75%;
@@ -58,6 +59,23 @@ div {
 
 }
 
+
+
+h5,
+#clearButton {
+    margin-bottom: 16px;
+}
+
+#subAreaLog{
+    overflow: ;
+}
+
+
+
+
+
+/* RODAPÉ */
+
 footer {
     margin: auto;
     width: 100vw;
@@ -68,7 +86,7 @@ footer {
     background-color: white;
 }
 
-/* RODAPÉ */
+
 footer>p {
     margin-top: 16px;
 }
